@@ -18,6 +18,7 @@
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="{{ site.mailchimp_hidden_name }}" tabindex="-1" value=""></div>
             <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="subscribe-button">
         </form>
+        <a href="{{ site.gumroad_link }}" class="purchase-link">Exclusive Content</a>
         <div class="social-links">
             {% for platform in site.social_platforms %}
                 <a href="{{ platform.url }}" class="social-link">
@@ -25,7 +26,6 @@
                 </a>
             {% endfor %}
         </div>
-        <a href="{{ site.gumroad_link }}" class="purchase-link">Exclusive NSFW Content</a>
     </div>
 </body>
 </html>
