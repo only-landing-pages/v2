@@ -3,40 +3,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>{{ site.model_name }}</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    body {
-      background-image: url('background.png');
-      background-size: cover;
-    }
-    .container {
-      margin-top: 100px;
-    }
-    .social-links a {
-      display: inline-block;
-      background-color: white;
-      color: black;
-      text-decoration: none;
-      padding: 10px;
-      margin: 5px;
-      border-radius: 5px;
-      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-    }
-    .social-links a:hover {
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.model_name }}</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<div class="container text-center">
-  <h1>{{ site.welcome_message }}</h1>
-  <p>{{ site.bio }}</p>
-  <form action="{{ site.mailchimp_action_url }}" method="post" target="_blank">
-    <input type="email" name="EMAIL" placeholder="Your email address" required>
-    <input type="submit" value="Subscribe">
-  </form>
-  <div class="social-links mt-3">
-    {% if site.onlyfans %}<a href="{{ site.onlyfans }}"><i class="fab fa-black-tie"></i> OnlyFans</a>{% endif %}
+<body style="background-image: url('{{ site.background_image }}');">
+    <div class="container">
+        <h1>{{ site.welcome_message }}</h1>
+        <p>{{ site.bio }}</p>
+        <div class="social-links">
+            {% for platform in site.social_platforms %}
+                <a href="{{ platform.url }}" class="social-link">{{ platform.name }}</a>
+            {% endfor %}
+        </div>
+        <a href="{{ site.gumroad_link }}" class="purchase-link">Exclusive Content</a>
+    </div>
+</body>
+</html>
