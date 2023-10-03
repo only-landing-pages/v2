@@ -7,14 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ site.model_name }}</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body style="background-image: url('{{ site.background_image }}');">
     <div class="container">
         <h1>{{ site.welcome_message }}</h1>
         <p>{{ site.bio }}</p>
+        <form action="{{ site.mailchimp_action_url }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="subscribe-form" target="_blank" novalidate>
+            <input type="email" value="" name="EMAIL" class="email-input" id="mce-EMAIL" placeholder="email address" required>
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="{{ site.mailchimp_hidden_name }}" tabindex="-1" value=""></div>
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="subscribe-button">
+        </form>
         <div class="social-links">
             {% for platform in site.social_platforms %}
-                <a href="{{ platform.url }}" class="social-link">{{ platform.name }}</a>
+                <a href="{{ platform.url }}" class="social-link">
+                    <i class="fab fa-{{ platform.icon }}"></i> {{ platform.name }}
+                </a>
             {% endfor %}
         </div>
         <a href="{{ site.gumroad_link }}" class="purchase-link">Exclusive Content</a>
