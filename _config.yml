@@ -3,7 +3,7 @@ welcome_message: "Welcome to My Page!"
 bio: "Brief bio or description here."
 background_image: "background.png"
 gumroad_link: "https://gabiryu.gumroad.com/l/poogt"
-mailchimp_action_url: "YOUR_MAILCHIMP_FORM_POST_URL"
+mailchimp_action_url: "https://github.us21.list-manage.com/subscribe/post?u=e8131dd97e9e243bc448e3941&amp;id=8734494c97&amp;f_id=00a0e3e6f0"
 mailchimp_hidden_name: "YOUR_MAILCHIMP_HIDDEN_FIELD_NAME"
 social_platforms:
   - name: "Instagram"
